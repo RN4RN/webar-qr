@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAR con QR</title>
+    <!-- Cargar librerías de A-Frame y AR.js -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <!-- Escena AR -->
+    <a-scene embedded arjs>
+        <!-- Marcador AR -->
+        <a-marker preset="hiro">
+            <!-- Cargar el modelo 3D desde la URL -->
+            <a-entity 
+                gltf-model="url(modelo.glb)" 
+                scale="0.5 0.5 0.5" 
+                position="0 0 0">
+            </a-entity>
+        </a-marker>
+        <!-- Cámara AR -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
