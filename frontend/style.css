@@ -1,0 +1,305 @@
+/* General */
+/* General */
+body {
+  background-color: #ffc400;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Hace que el fondo sea fijo */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+
+/* Barra de navegación */
+/* Estilo general de la barra de navegación */
+.navbar {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espacia los elementos */
+  background-color: #ffc400a2; /* Fondo amarillo */
+  padding: 3px 7px;
+  height: 70px; /* Altura fija para la barra de navegación */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0; /* Asegura que esté en la parte superior de la página */
+  left: 0; /* Asegura que esté alineada a la izquierda */
+  width: 100%; /* Asegura que ocupe el ancho completo de la pantalla */
+  z-index: 1000; /* Asegura que la barra quede sobre otros elementos */
+}
+
+/* Estilo para la imagen del logo con efecto neón */
+.logo {
+  height: 130px; /* Ajusta solo la altura de la imagen */
+  width: auto; /* Mantén la proporción de la imagen */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); /* Efecto de neón */
+}
+
+/* Estilo del nombre de la tienda con efecto 3D */
+.store-name {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #fff; /* Texto blanco */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 
+               -2px -2px 5px rgba(255, 255, 255, 0.7); /* Efecto 3D */
+  font-weight: bold;
+}
+
+/* Menú de navegación */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff; /* Blanco para los enlaces */
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Sombra para destacar */
+  transition: color 0.3s, transform 0.3s;
+}
+
+.menu li a:hover {
+  color: #fffae6; /* Blanco cálido al pasar el cursor */
+  transform: scale(1.1); /* Efecto de zoom */
+}
+
+
+.inicio {
+  background-image: url(assets/f.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center; /* Centrar texto horizontalmente */
+  display: flex; /* Activar flexbox */
+  flex-direction: column; /* Alinear elementos en columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  height: 40vh; /* Ajustar la altura de la sección a toda la pantalla */
+  margin-top: 5.9%;
+  
+}
+
+/* Espaciado adicional entre los elementos */
+.inicio h2 {
+  margin-bottom: 10px;
+  color:#ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363), 
+               -2px -2px 5px rgba(255, 255, 255, 0.9); /* Efecto 3D */
+}
+
+.inicio p {
+  margin-bottom: 20px;
+}
+
+/* Estilo del botón */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  width: 180px;
+  height: 40px;
+  background-image: linear-gradient(rgb(214, 202, 254), rgb(158, 129, 254));
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 1px 3px 0px rgb(139, 113, 255);
+  transition-duration: 0.3s;
+}
+
+.cartIcon {
+  width: 14px;
+}
+
+.cartIcon path {
+  fill: white;
+}
+
+.button:active {
+  transform: translate(2px, 0px);
+  box-shadow: 0px 1px 0px rgb(139, 113, 255);
+  padding-bottom: 1px;
+}
+
+/* Buscador */
+.buscador {
+  padding: 20px;
+  
+  border-radius: 8px;
+  text-align: center;
+  color:#ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 
+               -2px -2px 5px rgba(255, 255, 255, 0.7); /* Efecto 3D */
+ 
+}
+
+.buscador input {
+  padding: 10px;
+  width: 300px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buscador button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background-color: #218838;
+}
+
+#resultadosBusqueda {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* Contenedor de la lista de productos */
+#productList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  list-style-type: none;
+}
+
+/* Tarjeta de cada producto */
+.product-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del producto */
+.product-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Información del producto */
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Botones de acción */
+.product-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+/* Contenedor del buscador */
+.buscador-contenedor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.buscador input {
+  padding: 10px;
+  width: 300px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buscador button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background-color: #218838;
+}
+
+/* Sugerencias */
+.sugerencias {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  width: 300px;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.sugerencia {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sugerencia:hover {
+  background-color: #f9f9f9;
+}
+
+/* Resultados de búsqueda */
+#resultadosBusqueda {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  position: relative;
+}
+
+
+
