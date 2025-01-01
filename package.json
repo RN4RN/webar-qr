@@ -1,8 +1,8 @@
 {
     "name": "inventario-tienda",
     "version": "1.0.0",
-    "description": "Sistema de inventario para una tienda pequeña con Node.js, SQLite y Frontend",
-    "main": "server.js",
+    "description": "Sistema de inventario para una tienda pequeña con Node.js, MongoDB y Frontend",
+    "main": "backend/server.js",
     "scripts": {
         "start": "node backend/server.js"
     },
@@ -20,3 +20,4 @@
         "sqlite3": "^5.1.6"
     }
 }
+
