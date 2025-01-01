@@ -1,7 +1,7 @@
 // Función para cargar los productos
 async function loadProducts() {
   try {
-    const response = await fetch('http://localhost:3000/api/products');
+    const response = await fetch('https://almacen-wlou.onrender.com/api/products');
     const products = await response.json();
 
     const productList = document.getElementById('productList');
@@ -13,7 +13,7 @@ async function loadProducts() {
       productCard.className = 'product-card';
 
       productCard.innerHTML = `
-        <img src="http://localhost:3000/uploads/${product.image}" alt="${product.name}">
+        <img src="https://almacen-wlou.onrender.com/uploads/${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
         <p>Categoría: ${product.category}</p>
         <p>Stock: ${product.quantity}</p>
@@ -51,7 +51,7 @@ document.getElementById('productForm').addEventListener('submit', async (e) => {
   }
 
   try {
-    await fetch('http://localhost:3000/api/products', {
+    await fetch('https://almacen-wlou.onrender.com/api/products', {
       method: 'POST',
       body: formData  // Enviar el FormData al backend
     });
@@ -65,7 +65,7 @@ document.getElementById('productForm').addEventListener('submit', async (e) => {
 // Función para eliminar un producto
 async function deleteProduct(id) {
   try {
-    await fetch(`http://localhost:3000/api/products/${id}`, {
+    await fetch(`https://almacen-wlou.onrender.com/api/products/${id}`, {
       method: 'DELETE'
     });
 
@@ -99,7 +99,7 @@ async function editProduct(id, name, category, quantity, price) {
     };
 
     try {
-      await fetch(`http://localhost:3000/api/products/${id}`, {
+      await fetch(`https://almacen-wlou.onrender.com/api/products/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ let busquedasPrevias = [];
 // Función para cargar productos y almacenarlos globalmente
 async function loadProducts() {
   try {
-    const response = await fetch('http://localhost:3000/api/products');
+    const response = await fetch('https://almacen-wlou.onrender.com/api/products');
     const products = await response.json();
 
     productosGlobales = products;
@@ -173,7 +173,7 @@ function agregarProductoADom(product) {
   productCard.className = 'product-card';
 
   productCard.innerHTML = `
-    <img src="http://localhost:3000/uploads/${product.image}" alt="${product.name}">
+    <img src="https://almacen-wlou.onrender.com/uploads/${product.image}" alt="${product.name}">
     <h3>${product.name}</h3>
     <p>Categoría: ${product.category}</p>
     <p>Stock: ${product.quantity}</p>
