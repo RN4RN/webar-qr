@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Producto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="store-name">Mi Tienda Virtual</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Volver al Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="añadirProducto">
+      <h2>Añadir Producto</h2>
+      <form id="productForm" enctype="multipart/form-data">
+        <input type="text" id="name" placeholder="Nombre del producto" required>
+        
+        <!-- Dropdown para elegir la categoría -->
+        <select id="category" required>
+          <option value="" disabled selected>Selecciona una categoría</option>
+          <option value="golosinas">Golosinas</option>
+          <option value="limpieza">Limpieza</option>
+          <option value="ropa">Ropa</option>
+          <option value="tecnologia">Tecnología</option>
+          <option value="hogar">Hogar</option>
+        </select>
+        
+        <input type="number" id="quantity" placeholder="Cantidad" required>
+        <input type="number" id="price" placeholder="Precio" required>
+        <input type="file" id="image" accept="image/*">
+        <button type="submit">Añadir Producto</button>
+      </form>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Mi Tienda Virtual</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
