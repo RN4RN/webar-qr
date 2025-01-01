@@ -45,8 +45,9 @@ const productSchema = new mongoose.Schema({
 // Crear el modelo de producto
 const Product = mongoose.model('Product', productSchema);
 
-// Middleware para servir archivos estáticos (como imágenes)
+// Middleware para servir archivos estáticos (como imágenes y frontend)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // Ruta para obtener los productos
 app.get('/api/products', async (req, res) => {
@@ -99,8 +100,12 @@ app.put('/api/products/:id', async (req, res) => {
   }
 });
 
+// Ruta principal para servir el archivo index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
 // Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
-
